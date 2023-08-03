@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Inter;
+  src: url("./assets/Inter-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  src: url("./assets/Inter-Bold.ttf");
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +24,20 @@
   --primary-color: #001a74;
   --background: #011222;
   --accent: #1ceddc;
+  --inter-bold: Inter-Bold;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
-  min-height: 100vh;
   background-color: var(--background);
   color: white;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system;
 }

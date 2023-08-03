@@ -8,6 +8,10 @@ export default {
         background: "var(--background)",
         accent: "var(--accent)",
       },
+
+      fontFamily: {
+        "inter-bold": ["var(--inter-bold)", "system-ui", "-apple-system"],
+      },
     },
   },
   plugins: [],

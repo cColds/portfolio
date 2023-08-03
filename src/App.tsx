@@ -1,7 +1,11 @@
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <div className="app">
-      <p className="text-accent">Heyo, it's me.</p>
+    <div className="h-full">
+      <main className="h-full flex justify-center items-center">
+        <Hero />
+      </main>
     </div>
   );
 }
