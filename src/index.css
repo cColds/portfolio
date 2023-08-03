@@ -9,13 +9,13 @@
 }
 
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --primary-color: #001a74;
+  --background: #011222;
+  --accent: #1ceddc;
 }
 
 body {
   min-height: 100vh;
+  background-color: var(--background);
+  color: white;
 }
