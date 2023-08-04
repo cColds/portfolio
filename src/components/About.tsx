@@ -2,7 +2,7 @@ import TechStack from "./TechStack";
 
 function About() {
   return (
-    <div className="flex flex-col p-6 mb-6" id="about">
+    <div className="flex flex-col p-6 mb-12" id="about">
       <h1 className="text-4xl mb-4">About</h1>
       <div className="flex flex-col gap-4 text-lg">
         <p>
