@@ -3,7 +3,7 @@ import TechStack from "./TechStack";
 function About() {
   return (
     <div className="flex flex-col p-6 mb-6">
-      <h1 className="text-3xl mb-4">About</h1>
+      <h1 className="text-4xl mb-4">About</h1>
       <div className="flex flex-col gap-4 text-lg">
         <p>
           Hey there! I'm{" "}

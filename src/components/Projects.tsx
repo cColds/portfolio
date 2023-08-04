@@ -2,7 +2,7 @@ import projectData from "../projectData";
 function Projects() {
   return (
     <section className="flex flex-col p-6 mb-6" id="projects">
-      <h1 className="text-3xl mb-4">Projects</h1>
+      <h1 className="text-4xl mb-4">Projects</h1>
       <div className="flex flex-col gap-6">
         {projectData.map((project) => {
           return (

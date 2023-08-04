@@ -4,7 +4,7 @@ import techStack from "../techStack";
 function TechStack() {
   return (
     <div className="mt-6">
-      <h2 className="text-3xl mb-6">Tech Stack</h2>
+      <h2 className="text-2xl mb-6">Tech Stack</h2>
       <div className="flex flex-wrap gap-4">
         {techStack.map((tech) => {
           return (
