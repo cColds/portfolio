@@ -29,7 +29,7 @@ function Projects() {
                   </a>
                 </div>
               </div>
-              <div className="border-[1px] border-slate-400 max-w-[350px] max-h-[350px]">
+              <div className="border-[1px] rounded-[4px] overflow-hidden border-slate-400 max-w-[350px] max-h-[350px]">
                 <img
                   src={project.image}
                   alt="preview"
