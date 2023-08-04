@@ -15,10 +15,10 @@ function Hero() {
         </div>
 
         <a
-          className="text-black bg-accent rounded-lg justify-self-start px-4 py-2 w-fit"
-          href="#projects"
+          className="text-black bg-accent rounded-lg justify-self-start px-4 py-3 w-fit"
+          href="#about"
         >
-          View Projects
+          Get to know me
         </a>
       </div>
     </div>
