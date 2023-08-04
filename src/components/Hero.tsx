@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="flex place-items-center h-screen">
+    <section className="flex place-items-center h-screen">
       <div className="flex flex-col gap-6">
         <div>
           <h1 className="text-4xl">
@@ -21,7 +21,7 @@ function Hero() {
           Get to know me
         </a>
       </div>
-    </div>
+    </section>
   );
 }
 
