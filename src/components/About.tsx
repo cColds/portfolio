@@ -4,7 +4,7 @@ function About() {
   return (
     <section className="flex flex-col p-6 mb-12" id="about">
       <h1 className="text-4xl mb-4">About</h1>
-      <div className="flex flex-col gap-4 text-lg">
+      <div className="flex flex-col gap-4 text-lg py-4">
         <p>
           Hey there! I'm{" "}
           <span className="font-inter-bold text-accent">Cold</span>, a web
