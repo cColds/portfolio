@@ -19,7 +19,10 @@ function Projects() {
           const tech = formatTech(...project.tech);
 
           return (
-            <div key={project.id} className="flex flex-col md:flex-row gap-4">
+            <div
+              key={project.id}
+              className="flex flex-col md:flex-row justify-between"
+            >
               <div className="flex flex-col gap-4 py-6">
                 <h2 className="text-xl font-inter-bold">{project.title}</h2>
                 <p className="max-w-lg">{project.description}</p>
