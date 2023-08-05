@@ -9,7 +9,7 @@ const projectData = [
     image: pixelhunt,
     description:
       "A Where's Waldo (Photo Tagging) game where your goal is to find all the hidden characters. After finding all of them, you can submit your score on the leaderboard, sorted by fastest times.",
-    tech: ["React", "TypeScript", "Firebase"],
+    tech: ["React", "TypeScript", "Firebase", "React Router", "TailwindCSS"],
     links: {
       repo: "https://github.com/cColds/wheres-waldo",
       site: "https://wheres-waldo-74fe1.web.app/",
@@ -21,7 +21,7 @@ const projectData = [
     image: shoppingCart,
     description:
       "An ecommerce app that fetches Shopify's API to generate products. You can browse items via the store, or by searching for it. You can add items to your cart and view your cart in the checkout.",
-    tech: ["React", "TypeScript", "Vitest"],
+    tech: ["React", "TypeScript", "React Router", "TailwindCSS", "Vitest"],
     links: {
       repo: "https://github.com/cColds/shopping-cart",
       site: "https://ccolds.github.io/shopping-cart",
