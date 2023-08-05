@@ -40,6 +40,7 @@ function Projects() {
                   src={project.image}
                   alt="preview"
                   className="h-full w-full object-cover transform hover:scale-125 duration-300 ease-in-out transition-transform cursor-pointer"
+                  loading="lazy"
                 />
               </a>
             </div>
