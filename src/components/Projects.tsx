@@ -31,13 +31,17 @@ function Projects() {
                   </a>
                 </div>
               </div>
-              <div className="border-[1px] rounded-[4px] overflow-hidden border-slate-400 max-w-[350px] max-h-[350px]">
+              <a
+                href={project.links.site}
+                className="border-[1px] rounded-[4px] overflow-hidden border-slate-400 max-w-[350px] max-h-[350px]"
+                target="_blank"
+              >
                 <img
                   src={project.image}
                   alt="preview"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transform hover:scale-125 duration-300 ease-in-out transition-transform cursor-pointer"
                 />
-              </div>
+              </a>
             </div>
           );
         })}
