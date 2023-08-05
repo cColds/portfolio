@@ -21,7 +21,7 @@ function Projects() {
           return (
             <div
               key={project.id}
-              className="flex flex-col md:flex-row justify-between"
+              className="flex flex-col md:flex-row justify-between gap-2"
             >
               <div className="flex flex-col gap-4 py-6">
                 <h2 className="text-xl font-inter-bold">{project.title}</h2>
