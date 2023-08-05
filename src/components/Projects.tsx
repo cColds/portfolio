@@ -1,4 +1,6 @@
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import projectData from "../projectData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Projects() {
   return (
     <section className="flex flex-col p-6 mb-12" id="projects">
@@ -12,20 +14,20 @@ function Projects() {
                 <p className="max-w-lg">{project.description}</p>
                 <div className="flex gap-4">{project.tech.join(", ")}</div>
 
-                <div className="flex gap-2">
-                  <a
-                    href={project.links.repo}
-                    className="text-indigo-400"
-                    target="_blank"
-                  >
-                    Repo
+                <div className="flex gap-4 text-accent">
+                  <a href={project.links.repo} target="_blank" title="Github">
+                    Code
                   </a>
                   <a
                     href={project.links.site}
-                    className="text-indigo-400"
                     target="_blank"
+                    title="External Link"
                   >
                     Live
+                    <FontAwesomeIcon
+                      icon={faArrowUpRightFromSquare}
+                      className="ml-2 text-white"
+                    />
                   </a>
                 </div>
               </div>
