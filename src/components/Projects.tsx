@@ -26,7 +26,7 @@ function Projects() {
               <div className="flex flex-col gap-4 py-4">
                 <h2 className="text-xl font-inter-bold">{project.title}</h2>
                 <p className="max-w-lg">{project.description}</p>
-                <div className="flex gap-4">Built with {tech}</div>
+                <p className="flex gap-4">Built with {tech}</p>
 
                 <div className="flex gap-4 text-accent">
                   <a href={project.links.repo} target="_blank" title="Github">
