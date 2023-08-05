@@ -4,7 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-dark-blue": "var(--primary-color)",
         background: "var(--background)",
         accent: "var(--accent)",
       },
