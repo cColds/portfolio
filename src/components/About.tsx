@@ -3,7 +3,7 @@ import TechStack from "./TechStack";
 
 function About() {
   return (
-    <section className="flex flex-col p-6 mb-12" id="about">
+    <section className="flex flex-col p-6 mb-12 scroll-mt-[100px]" id="about">
       <h1 className="text-4xl mb-4">About</h1>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
