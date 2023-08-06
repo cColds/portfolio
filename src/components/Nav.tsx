@@ -3,7 +3,7 @@ function Nav() {
     <nav className="flex px-12 py-4 justify-between items-center">
       <button
         onClick={() => window.scrollTo({ left: 0, top: 0 })}
-        className="text-xl text-black bg-accent rounded-full w-8 h-8"
+        className="text-xl text-accent border-accent border-2 rounded-full w-8 h-8"
         aria-label="home"
         title="Logo"
       >
