@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
-
-type BlogType = {
-  _id: string;
-  imgUrl: string;
-  title: string;
-  body: string;
-  author: { _id: string; username: string };
-  formatDate: string;
-  formatDateTitle: string;
-};
+import BlogType from "../types/Blog";
+import Comment from "./Comment";
 
 function Blog() {
   const [blog, setBlog] = useState<BlogType | null>(null);
   const { blogId } = useParams();
 
-  useEffect(() => {
+  const fetchBlog = useCallback(async () => {
     fetch(`http://localhost:3000/api/blogs/${blogId}`)
       .then(async (res) => {
         const targetBlog = await res.json();
@@ -23,6 +15,10 @@ function Blog() {
       })
       .catch((e) => console.error(e));
   }, [blogId]);
+
+  useEffect(() => {
+    fetchBlog();
+  }, [fetchBlog]);
 
   return (
     <div>
@@ -32,7 +28,9 @@ function Blog() {
             <h1 className="font-inter-bold text-4xl">{blog.title}</h1>
             <div className="flex gap-2">
               <p>{blog.author.username}</p> •{" "}
-              <p title={blog.formatDateTitle}>{blog.formatDate}</p>
+              <p className="text-slate-300" title={blog.formatDateTitle}>
+                {blog.formatDate}
+              </p>
             </div>
 
             <img
@@ -42,7 +40,9 @@ function Blog() {
             />
           </div>
 
-          <p>{blog.body}</p>
+          <p className="text-lg mb-8">{blog.body}</p>
+
+          <Comment blog={blog} fetchBlog={fetchBlog} />
         </article>
       )}
     </div>
