@@ -48,6 +48,8 @@ img {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  width: 100%;
+  max-width: 100%;
 }
 
 h1 {
