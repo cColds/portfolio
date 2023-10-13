@@ -9,6 +9,7 @@ type BlogPreview = {
   imgUrl: string;
   formatDate: string;
   formatDateTitle: string;
+  description: string;
 };
 
 function Blogs() {
@@ -43,7 +44,9 @@ function Blogs() {
                 <p>{blog.author.username}</p> •{" "}
                 <p title={blog.formatDateTitle}>{blog.formatDate}</p>
               </div>
-              <p className="line-clamp text-sm text-slate-300 ">{blog.body}</p>
+              <p className="line-clamp text-sm text-slate-300 ">
+                {blog.description}
+              </p>
             </article>
           );
         })}
