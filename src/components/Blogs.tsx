@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 type BlogPreview = {
   _id: string;
@@ -15,9 +16,12 @@ type BlogPreview = {
 
 function Blogs() {
   const [blogs, setBlogs] = useState<[] | BlogPreview[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchBlogs() {
+      setLoading(true);
+
       try {
         const res = await axios.get(
           "http://localhost:3000/api/blogs/published"
@@ -27,11 +31,15 @@ function Blogs() {
         setBlogs(allBlogs);
       } catch (err) {
         console.error(err);
+      } finally {
+        setLoading(false);
       }
     }
 
     fetchBlogs();
   }, []);
+
+  if (loading) return <Loading loading={loading} />;
 
   return (
     <div className="flex flex-col p-8 w-full max-w-7xl">

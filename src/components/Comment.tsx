@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import BlogType from "../types/Blog";
 import { useState } from "react";
 import axios from "axios";
+import CircleSpinner from "./CircleSpinner";
 
 function Comment({
   blog,
@@ -15,9 +16,14 @@ function Comment({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    if (loading) return;
+
     e.preventDefault();
+    setLoading(true);
+
     const formData = { message, name, email };
     const data = new URLSearchParams(formData);
 
@@ -38,6 +44,8 @@ function Comment({
       console.error(err);
 
       setErrorMessage("All fields are required");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,7 +93,11 @@ function Comment({
 
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
 
-        <button className="text-black bg-accent rounded-lg justify-self-start px-4 py-2 w-fit transition duration-300 ease-in-out hover:opacity-80 hover:active:scale-95 mt-4">
+        <button
+          disabled={loading}
+          className="bg-accent mt-4 inline-flex w-fit items-center justify-self-start rounded-lg px-4 py-2 transition duration-300 ease-in-out hover:opacity-80 hover:active:scale-95 disabled:opacity-80"
+        >
+          {loading && <CircleSpinner />}
           Post comment
         </button>
       </form>

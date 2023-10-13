@@ -4,12 +4,16 @@ import DOMPurify from "dompurify";
 import BlogType from "../types/Blog";
 import Comment from "./Comment";
 import axios from "axios";
+import Loading from "./Loading";
 
 function Blog() {
   const [blog, setBlog] = useState<BlogType | null>(null);
+  const [loading, setLoading] = useState(true);
   const { blogId } = useParams();
 
   const fetchBlog = useCallback(async () => {
+    setLoading(true);
+
     try {
       const res = await axios.get(`http://localhost:3000/api/blogs/${blogId}`);
 
@@ -17,12 +21,16 @@ function Blog() {
       setBlog(targetBlog);
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   }, [blogId]);
 
   useEffect(() => {
     fetchBlog();
   }, [fetchBlog]);
+
+  if (loading) return <Loading loading={loading} />;
 
   return (
     <div>
