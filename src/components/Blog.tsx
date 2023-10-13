@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
 import BlogType from "../types/Blog";
 import Comment from "./Comment";
 
@@ -40,7 +41,10 @@ function Blog() {
             />
           </div>
 
-          <p className="text-lg mb-8">{blog.body}</p>
+          <div
+            className="prose-sm prose-invert my-3 rounded sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none"
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.body) }}
+          />
 
           <Comment blog={blog} fetchBlog={fetchBlog} />
         </article>
