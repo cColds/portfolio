@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import BlogType from "../types/Blog";
 import { useState } from "react";
+import axios from "axios";
 
 function Comment({
   blog,
@@ -21,27 +22,22 @@ function Comment({
     const data = new URLSearchParams(formData);
 
     try {
-      const res = await fetch(
+      await axios.post(
         `http://localhost:3000/api/blogs/${blogId}/comment`,
-        {
-          method: "POST",
-          body: data,
-        }
+        data
       );
-
-      if (!res.ok) throw new Error("All fields are required");
 
       setMessage("");
       setName("");
       setEmail("");
       setErrorMessage("");
       fetchBlog();
-    } catch (e) {
-      let message;
-      if (e instanceof Error) message = e.message;
-      else message = String(e);
+    } catch (err) {
+      if (!axios.isAxiosError(err)) throw Error("All fields are required");
 
-      setErrorMessage(message);
+      console.error(err);
+
+      setErrorMessage("All fields are required");
     }
   };
 

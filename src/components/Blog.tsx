@@ -3,18 +3,21 @@ import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 import BlogType from "../types/Blog";
 import Comment from "./Comment";
+import axios from "axios";
 
 function Blog() {
   const [blog, setBlog] = useState<BlogType | null>(null);
   const { blogId } = useParams();
 
   const fetchBlog = useCallback(async () => {
-    fetch(`http://localhost:3000/api/blogs/${blogId}`)
-      .then(async (res) => {
-        const targetBlog = await res.json();
-        setBlog(targetBlog);
-      })
-      .catch((e) => console.error(e));
+    try {
+      const res = await axios.get(`http://localhost:3000/api/blogs/${blogId}`);
+
+      const targetBlog = res.data;
+      setBlog(targetBlog);
+    } catch (err) {
+      console.error(err);
+    }
   }, [blogId]);
 
   useEffect(() => {

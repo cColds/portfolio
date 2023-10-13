@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -16,12 +17,20 @@ function Blogs() {
   const [blogs, setBlogs] = useState<[] | BlogPreview[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/blogs/published")
-      .then(async (res) => {
-        const allBlogs = await res.json();
+    async function fetchBlogs() {
+      try {
+        const res = await axios.get(
+          "http://localhost:3000/api/blogs/published"
+        );
+
+        const allBlogs: BlogPreview[] = res.data;
         setBlogs(allBlogs);
-      })
-      .catch((e) => console.error(e));
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchBlogs();
   }, []);
 
   return (
