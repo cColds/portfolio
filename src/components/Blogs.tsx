@@ -16,7 +16,7 @@ function Blogs() {
   const [blogs, setBlogs] = useState<[] | BlogPreview[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/blogs")
+    fetch("http://localhost:3000/api/blogs/published")
       .then(async (res) => {
         const allBlogs = await res.json();
         setBlogs(allBlogs);
