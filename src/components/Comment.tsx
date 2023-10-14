@@ -29,7 +29,7 @@ function Comment({
 
     try {
       await axios.post(
-        `http://localhost:3000/api/blogs/${blogId}/comment`,
+        `${import.meta.env.API_URL}/api/blogs/${blogId}/comment`,
         data
       );
 
