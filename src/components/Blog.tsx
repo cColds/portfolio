@@ -16,7 +16,7 @@ function Blog() {
 
     try {
       const res = await axios.get(
-        `${import.meta.env.API_URL}/api/blogs/${blogId}`
+        `${import.meta.env.VITE_API_URL}/api/blogs/${blogId}`
       );
 
       const targetBlog = res.data;

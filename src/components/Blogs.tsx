@@ -24,7 +24,7 @@ function Blogs() {
 
       try {
         const res = await axios.get(
-          `${import.meta.env.API_URL}/api/blogs/published`
+          `${import.meta.env.VITE_API_URL}/api/blogs/published`
         );
 
         const allBlogs: BlogPreview[] = res.data;

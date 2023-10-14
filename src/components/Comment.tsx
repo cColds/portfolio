@@ -29,7 +29,7 @@ function Comment({
 
     try {
       await axios.post(
-        `${import.meta.env.API_URL}/api/blogs/${blogId}/comment`,
+        `${import.meta.env.VITE_API_URL}/api/blogs/${blogId}/comment`,
         data
       );
 
