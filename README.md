@@ -1,6 +1,6 @@
 # Portfolio
 
-## [Live](https://ccolds.github.io/portfolio/)
+## [Live](https://ccolds-portfolio.netlify.app/)
 
 A portfolio site featuring my projects and tech stack.
 
