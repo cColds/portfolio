@@ -55,7 +55,7 @@ function Blog() {
           </div>
 
           <div
-            className="prose-sm prose-invert my-3 rounded sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none"
+            className="prose-sm prose-invert my-3 rounded sm:prose-base lg:prose-lg focus:outline-none"
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.body) }}
           />
 
